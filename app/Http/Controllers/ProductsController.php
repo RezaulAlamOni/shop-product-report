@@ -12,9 +12,11 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $products = Products::where('shop_id', $request->shop_id)->get();
+        $product_list = view('Products.products', ['products' => $products])->render();
+        return response()->json(['products' => $product_list]);
     }
 
     /**
@@ -30,7 +32,7 @@ class ProductsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -41,7 +43,7 @@ class ProductsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Products  $products
+     * @param \App\Products $products
      * @return \Illuminate\Http\Response
      */
     public function show(Products $products)
@@ -52,7 +54,7 @@ class ProductsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Products  $products
+     * @param \App\Products $products
      * @return \Illuminate\Http\Response
      */
     public function edit(Products $products)
@@ -63,8 +65,8 @@ class ProductsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Products  $products
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Products $products
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Products $products)
@@ -75,7 +77,7 @@ class ProductsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Products  $products
+     * @param \App\Products $products
      * @return \Illuminate\Http\Response
      */
     public function destroy(Products $products)

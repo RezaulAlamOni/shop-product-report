@@ -16,7 +16,7 @@ class ClientShopController extends Controller
     public function index(Request $request)
     {
         $shops = ClientShop::leftJoin('products','client_shops.id','products.shop_id')
-            ->select(DB::raw('sum(total_product) as total_item'),'client_shops.shop_name')
+            ->select(DB::raw('sum(total_product) as total_item'),'client_shops.shop_name','client_shops.id')
             ->groupBy('client_shops.id');
         if ($request->has('search')){
             $shops = $shops->where('products.product_cat','like','%'.$request->search.'%');

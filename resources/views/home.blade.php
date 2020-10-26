@@ -50,14 +50,32 @@
         }
 
         /*------hide show details---------*/
-        function detalsOpen(type, index) {
+        function detailsOpen(type, index,shop_id) {
+            $('.details-tr').hide()
             if (type == 1) {
                 $('#deatails_up' + index).hide()
                 $('#deatails_down' + index).show()
+                $('.details-tr' + index).hide()
+
             } else {
+                $('.deatails_up').hide()
+                $('.deatails_down').show()
                 $('#deatails_up' + index).show()
                 $('#deatails_down' + index).hide()
+                $('.details-tr' + index).show()
+                getProducts(shop_id,index)
             }
+        }
+        /*------get shop product details details---------*/
+        function getProducts(shop_id,index) {
+            $.ajax({
+                type: 'get',
+                url: '/get-products?shop_id='+shop_id,
+                data: '_token = <?php echo csrf_token() ?>',
+                success: function (data) {
+                    $('#details-table' + index).html(data.products)
+                }
+            });
         }
 
         /*------search shop by product cat---------*/

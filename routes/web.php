@@ -19,3 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/get-shops', 'ClientShopController@index')->name('get.shops');
+Route::get('/get-products', 'ProductsController@index')->name('get.products');

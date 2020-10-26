@@ -117,11 +117,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Radistic/carbooking" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Products" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Xampp\htdocs\InterView\CompanySales\resources\views\Products" />
+      <recent name="F:\Xampp\htdocs\InterView\CompanySales\resources\views" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -137,7 +143,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603697046530</updated>
-      <workItem from="1603697047666" duration="7791000" />
+      <workItem from="1603697047666" duration="10067000" />
     </task>
     <servers />
   </component>
@@ -153,10 +159,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1603700271971" />
-    <state width="505" height="451" key="SwitcherDM" timestamp="1603699821044">
+    <state width="505" height="451" key="SwitcherDM" timestamp="1603705265819">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="505" height="451" key="SwitcherDM/0.0.1366.738@0.0.1366.738" timestamp="1603699821044" />
+    <state width="505" height="451" key="SwitcherDM/0.0.1366.738@0.0.1366.738" timestamp="1603705265819" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1603697836670">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
