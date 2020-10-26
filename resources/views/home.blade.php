@@ -66,11 +66,12 @@
                 getProducts(shop_id,index)
             }
         }
+
         /*------get shop product details details---------*/
         function getProducts(shop_id,index) {
             $.ajax({
                 type: 'get',
-                url: '/get-products?shop_id='+shop_id,
+                url: '/get-products?shop_id='+shop_id+queryGenerate(),
                 data: '_token = <?php echo csrf_token() ?>',
                 success: function (data) {
                     $('#details-table' + index).html(data.products)
@@ -95,5 +96,16 @@
             }
 
         }
+
+        function queryGenerate(){
+            let search = $('#search-shop').val();
+            let string = '';
+            if (search.length > 0) {
+                string = '&search='+search;
+            }
+            return string;
+        }
+
+
     </script>
 @endsection

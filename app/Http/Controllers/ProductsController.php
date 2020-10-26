@@ -14,7 +14,12 @@ class ProductsController extends Controller
      */
     public function index(Request $request)
     {
-        $products = Products::where('shop_id', $request->shop_id)->get();
+        $products = Products::where('shop_id', $request->shop_id)
+            ->orderBy('total_product','desc');
+        if ($request->has('search')){
+            $products = $products->where('product_cat','like','%'.$request->search.'%');
+        }
+        $products = $products->get();
         $product_list = view('Products.products', ['products' => $products])->render();
         return response()->json(['products' => $product_list]);
     }

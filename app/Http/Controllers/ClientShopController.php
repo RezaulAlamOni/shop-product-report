@@ -21,7 +21,7 @@ class ClientShopController extends Controller
         if ($request->has('search')){
             $shops = $shops->where('products.product_cat','like','%'.$request->search.'%');
         }
-        $shops = $shops->orderBy('total_item','desc')
+        $shops = $shops->orderBy('total_item','desc')->orderBy('id','desc')
             ->get();
         $shop_list = view('CliectsShop.shop',['shops'=>$shops])->render();
         return response()->json(['shops' => $shop_list]);
